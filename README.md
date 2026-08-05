@@ -1,4 +1,4 @@
-"""# Yetahiq — Behavioral Intelligence Platform
+Yetahiq - Behavioral Intelligence Platform
 
 > **Turn Human Behavior into Enterprise Intelligence.**  
 > Yetahiq maps hidden team communication patterns, measures workforce dynamics, and provides continuous, data-driven analytics for corporate leaders.
@@ -55,7 +55,7 @@ Ensure you have the following installed locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-org/yetahiq-landing-page.git](https://github.com/your-org/yetahiq-landing-page.git)
+   git clone https://github.com/Alozie-Miracle/Yetah-IQ-Home-Page-UI.git
    cd yetahiq-landing-page
 
 ```
@@ -110,28 +110,7 @@ yetahiq/
 
 ---
 
-## 🔧 Configuration & Customization
 
-### Updating Hero Carousel Content
-
-To update slide copy or image assets, modify `src/lib/constants.ts`:
-
-```typescript
-export const HERO_SLIDES = [
-  {
-    id: 1,
-    title: "Turn Human Behavior into Enterprise Intelligence",
-    subtitle: "Measure and optimize key team behaviors using continuous, data-driven analytics designed for corporate leaders.",
-    ctaText: "Request Executive Pilot",
-    ctaLink: "#pilot-request",
-    image: "/images/hero-boardroom.jpg",
-  },
-  // Add or modify additional slides...
-];
-
-```
-
----
 
 ## 📦 Build & Deployment
 
@@ -153,32 +132,6 @@ npm run start
 
 This project is optimized for direct deployment on **Vercel**, **Netlify**, or AWS Amplify:
 
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-"""
-
-file_path = "README.md"
-with open(file_path, "w", encoding="utf-8") as f:
-f.write(readme_content)
-
-print(f"File saved successfully as {file_path}")
-
-```
-
-```text?code_stdout&code_event_index=1
-File saved successfully as README.md
-
-
-```
-
-Your Markdown file is ready
-
-
-```markdown
-# Yetahiq — Behavioral Intelligence Platform
 
 > **Turn Human Behavior into Enterprise Intelligence.**  
 > Yetahiq maps hidden team communication patterns, measures workforce dynamics, and provides continuous, data-driven analytics for corporate leaders.
