@@ -1,0 +1,119 @@
+'use client'
+import { useState, useEffect, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { HERO_SLIDES } from '@/lib/data';
+import Image from 'next/image';
+
+
+
+const HeroCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    slideTimerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 7000);
+    return () => {
+      if (slideTimerRef.current) clearInterval(slideTimerRef.current);
+    };
+  }, []);
+
+
+  const slide = HERO_SLIDES[currentSlide];
+
+  return (
+    <section 
+      id="hero"
+      className="relative min-h-[88vh] pt-28 pb-6 flex flex-col justify-between overflow-hidden bg-[#070E17]"
+    >
+        {/* Background Image Carousel Container with Crossfade */}
+        {HERO_SLIDES.map((item, idx) => (
+            <div
+                key={item.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    currentSlide === idx ? 'opacity-100 z-0' : 'opacity-0 -z-10'
+                }`}
+                >
+                {/* Background Image */}
+                <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000"
+                />
+                {/* Corporate Cinematic Dark Gradient Overlay */}
+                <div className="absolute inset-0 bg-linear-to-r from-[#070E17]/60 via-[#070E17]/50 to-[#070E17]/30"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#070E17] via-transparent to-[#070E17]/60"></div>
+            </div>
+        ))}
+
+        {/* Main Hero Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 my-auto py-12">
+            <div className="max-w-3xl space-y-6">
+            
+            {/* Subtle Category Eyebrow */}
+            <div className="text-xs font-mono font-light tracking-widest text-slate-300 uppercase">
+                ENTERPRISE BEHAVIORAL INTELLIGENCE
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.12] drop-shadow-sm">
+                {slide.headline}
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-lg sm:text-2xl text-slate-200 font-light leading-relaxed drop-shadow max-w-2xl">
+                {slide.subheadline}
+            </p>
+
+            {/* Red Call to Action Button */}
+            <div className="pt-4">
+                <button
+                    className="px-7 py-4 text-sm font-light tracking-wider text-white bg-red-600 hover:bg-red-700 transition-colors flex items-center justify-center gap-3 group shadow-lg"
+                >
+                <span>{slide.ctaText}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+            </div>
+
+            </div>
+        </div>
+
+        {/* ExxonMobil Style Bottom Tab Bar */}
+        <div className="relative z-20 w-full border-t border-white/10 bg-linear-to-t from-[#070E17] to-transparent pt-4 pb-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {HERO_SLIDES.map((s, idx) => {
+                const isActive = currentSlide === idx;
+                return (
+                    <button
+                    key={s.id}
+                    onClick={() => setCurrentSlide(idx)}
+                    className="text-left group cursor-pointer focus:outline-none py-2"
+                    >
+                    {/* Top Line Indicator */}
+                    <div className="w-full bg-white/20 h-0.5 relative overflow-hidden mb-3">
+                        {isActive && (
+                        <div className="absolute inset-0 bg-red-600 h-0.5 transition-all duration-300"></div>
+                        )}
+                    </div>
+                    {/* Title Text */}
+                    <p className={`text-xs sm:text-sm font-light transition-colors line-clamp-2 ${
+                        isActive ? 'text-white' : 'text-slate-400 group-hover:text-slate-200'
+                    }`}>
+                        {s.headline}
+                    </p>
+                    </button>
+                );
+                })}
+            </div>
+            </div>
+        </div>
+
+    </section>
+  );
+};
+
+
+
+export default HeroCarousel
