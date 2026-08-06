@@ -4,6 +4,10 @@ import heroBoardroomImg from '@/assets/hero_boardroom.jpg';
 import heroNeuralImg from '@/assets/hero_neural_plexus.jpg';
 import heroAnalyticsImg from '@/assets/hero_analytics_city.jpg';
 
+import hero1 from '@/assets/hero1.jpeg';
+import hero2 from '@/assets/hero2.jpg';
+import hero3 from '@/assets/hero3.jpg';
+
 export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
@@ -14,7 +18,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     secondaryCtaText: "Explore Platform",
     ctaAction: "pilot",
     badge: "BEHAVIORAL INTELLIGENCE V4.8",
-    image: heroBoardroomImg,
+    image: hero1,
     accentColor: "#00E5FF"
   },
   {
@@ -26,7 +30,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     secondaryCtaText: "View Node Graph",
     ctaAction: "engine",
     badge: "NEURAL PLEXUS TELEMETRY",
-    image: heroNeuralImg,
+    image: hero2,
     accentColor: "#00E5FF"
   },
   {
@@ -38,7 +42,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     secondaryCtaText: "View Capabilities",
     ctaAction: "demo",
     badge: "EXECUTIVE COMMAND SUITE",
-    image: heroAnalyticsImg,
+    image: hero3,
     accentColor: "#E11D48"
   }
 ];

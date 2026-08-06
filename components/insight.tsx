@@ -49,7 +49,7 @@ const InsightSection = () => {
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{  margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-4xl space-y-4"
         >
@@ -74,7 +74,7 @@ const InsightSection = () => {
               <motion.div 
                 initial={{ opacity: 0, x: item.reverse ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{  margin: '-50px' }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
                 className="w-full lg:w-1/2"
               >
@@ -92,7 +92,7 @@ const InsightSection = () => {
               <motion.div 
                 initial={{ opacity: 0, x: item.reverse ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{  margin: '-50px' }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
                 className="w-full lg:w-1/2 space-y-4"
               >

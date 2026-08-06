@@ -75,7 +75,7 @@ const FaqSection = () => {
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{ margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
@@ -118,7 +118,7 @@ const FaqSection = () => {
                   key={item.id}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-30px' }}
+                  viewport={{ margin: '-30px' }}
                   transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
                   className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                     isOpen
@@ -167,7 +167,7 @@ const FaqSection = () => {
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{ margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
           className="p-8 rounded-2xl border bg-slate-50 border-slate-200 text-center space-y-4"
         >

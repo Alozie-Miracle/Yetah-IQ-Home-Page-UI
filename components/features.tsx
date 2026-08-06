@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'motion/react';
 import featuresBgImg from '@/assets/features_bg_section.jpg';
+import photo from '@/assets/photo3.jpg';
 import Image from 'next/image';
 
 const FeatureSection = () => {
@@ -9,7 +10,7 @@ const FeatureSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={featuresBgImg}
+          src={photo}
           alt="Features Background"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover"

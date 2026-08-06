@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, LogIn, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 
-const Navbar = ({ }) => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -41,8 +42,8 @@ const Navbar = ({ }) => {
         <div className="flex items-center justify-between">
           
           {/* Logo: Yetah IQ */}
-          <button 
-            onClick={() => handleNavClick('hero')} 
+          <Link 
+            href='/'
             className="flex items-center gap-2.5 group text-left focus:outline-none"
             aria-label="Yetah IQ Homepage"
           >
@@ -57,12 +58,13 @@ const Navbar = ({ }) => {
                 Yetah <span className="text-cyan-400 font-mono">IQ</span>
               </span>
             </div>
-          </button>
+          </Link>
 
           {/* Desktop Navigation Links: platform, insight, features, pricing, faq */}
           <nav className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
-              <button
+              <Link
+                href={`#${link.id}`}
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
                 className={`text-sm font-light transition-colors hover:text-cyan-400 capitalize ${
@@ -73,7 +75,7 @@ const Navbar = ({ }) => {
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </nav>
 

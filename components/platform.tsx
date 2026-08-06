@@ -41,7 +41,7 @@ const PlatformOverview = () => {
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{  margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-4xl space-y-4"
         >
@@ -60,7 +60,7 @@ const PlatformOverview = () => {
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{  margin: '-50px' }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
               className="group flex flex-col justify-between space-y-4"
             >
