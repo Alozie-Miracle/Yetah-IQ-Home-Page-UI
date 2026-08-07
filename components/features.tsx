@@ -37,7 +37,7 @@ const FeatureSection = () => {
   ]
 
   return (
-    <section id="features" className="relative text-white py-32 sm:py-40 overflow-hidden border-b border-[#1E3A5F]">
+    <section id="features" className="relative text-white py-32 sm:py-40 overflow-hidden border-b border-teal-900/40">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -58,16 +58,18 @@ const FeatureSection = () => {
         transition={{ duration: 0.7, ease: 'easeOut' }}
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center min-h-62.5 space-y-6"
       >
-        
-
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-tight max-w-4xl text-white">
           Everything Your Team Needs for <span className="text-cyan-400 font-normal">Honest, Useful Reviews</span>
         </h2>
 
-        <div className='flex items-center justify-center gap-5 flex-col md:flex-row flex-wrap'>
-          {data.map(data => (
-            <span key={data.id} className="text-xs font-mono font-light tracking-widest uppercase px-3.5 py-1.5 rounded border border-red-800/80 bg-red-950/60 text-red-400">
-              {data.text}
+        {/* Turquoise Feature Badges */}
+        <div className="flex items-center justify-center gap-3.5 flex-col md:flex-row flex-wrap pt-2">
+          {data.map((item) => (
+            <span 
+              key={item.id} 
+              className="text-xs font-mono font-light tracking-widest uppercase px-3.5 py-1.5 rounded border border-teal-800/80 bg-teal-950/60 text-teal-300 hover:border-cyan-400/60 hover:text-cyan-300 transition-colors shadow-sm shadow-teal-950/50"
+            >
+              {item.text}
             </span>
           ))}
         </div>
@@ -77,5 +79,4 @@ const FeatureSection = () => {
   );
 };
 
-
-export default FeatureSection
+export default FeatureSection;

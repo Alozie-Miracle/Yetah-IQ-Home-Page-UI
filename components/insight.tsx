@@ -7,11 +7,9 @@ import trajectoryImg from '@/assets/trajectory_tracking_preview.jpg';
 import anonymityImg from '@/assets/anonymity_privacy_preview.jpg';
 import Image from 'next/image';
 
-
 import hand from '@/assets/hand.jpeg'
 import hand2 from '@/assets/hand2.jpeg'
 import tracking from '@/assets/hero3.jpg'
-
 
 const InsightSection = () => {
   const items = [
@@ -36,13 +34,6 @@ const InsightSection = () => {
       image: trajectoryImg,
       reverse: false
     },
-    // {
-    //   id: 'anonymity',
-    //   title: 'Anonymity Thresholds',
-    //   description: 'Keep feedback completely confidential until safety thresholds are met to protect honest communication.',
-    //   image: anonymityImg,
-    //   reverse: true
-    // }
   ];
 
   return (
@@ -53,12 +44,12 @@ const InsightSection = () => {
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{  margin: '-50px' }}
+          viewport={{ margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-4xl space-y-4"
         >
           <h2 className="text-3xl sm:text-5xl font-light tracking-tight leading-tight text-slate-900">
-            From Raw Feedback To <span className="text-red-600 font-normal">Instant Decision Signals</span>
+            From Raw Feedback To <span className="text-teal-600 font-normal">Instant Decision Signals</span>
           </h2>
           <p className="text-base sm:text-xl text-slate-600 font-light leading-relaxed">
             Don’t let valuable feedback gather dust in spreadsheets. Yetah IQ turns quantitative scores and qualitative comments into clear employee growth roadmaps.
@@ -70,7 +61,7 @@ const InsightSection = () => {
           {items.map((item) => (
             <div
               key={item.id}
-              className={`flex flex-col lg:flex-row items-center gap-8 sm:gap-12 ${
+              className={`flex flex-col lg:flex-row items-center gap-8 sm:gap-12 group ${
                 item.reverse ? 'lg:flex-row-reverse' : ''
               }`}
             >
@@ -78,16 +69,16 @@ const InsightSection = () => {
               <motion.div 
                 initial={{ opacity: 0, x: item.reverse ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{  margin: '-50px' }}
+                viewport={{ margin: '-50px' }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
                 className="w-full lg:w-1/2"
               >
-                <div className="overflow-hidden bg-slate-200 aspect-16/10 border border-slate-300 shadow-sm rounded-lg">
+                <div className="overflow-hidden bg-slate-200 aspect-16/10 border border-slate-300 group-hover:border-teal-500/40 shadow-sm rounded-lg transition-colors">
                   <Image
                     src={item.image}
                     alt={item.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               </motion.div>
@@ -96,11 +87,11 @@ const InsightSection = () => {
               <motion.div 
                 initial={{ opacity: 0, x: item.reverse ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{  margin: '-50px' }}
+                viewport={{ margin: '-50px' }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
                 className="w-full lg:w-1/2 space-y-4"
               >
-                <h3 className="text-xl sm:text-3xl font-light text-slate-900 tracking-tight">
+                <h3 className="text-xl sm:text-3xl font-light text-slate-900 tracking-tight group-hover:text-teal-600 transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed">
@@ -116,5 +107,4 @@ const InsightSection = () => {
   );
 };
 
-
-export default InsightSection
+export default InsightSection;

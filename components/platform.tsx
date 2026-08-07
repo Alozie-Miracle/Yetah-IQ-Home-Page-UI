@@ -35,16 +35,17 @@ const PlatformOverview = () => {
     <section id="platform" className="bg-white text-slate-900 py-20 sm:py-24 border-b border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Section Header - ExxonMobil Corporate Style */}
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{  margin: '-50px' }}
+          viewport={{ margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-4xl space-y-4"
         >
           <h2 className="text-3xl sm:text-5xl font-light tracking-tight leading-tight">
-            <span className="text-red-600 font-normal">360° Performance Intelligence</span>, Built For Teams That Care
+            {/* Turquoise Primary Highlight */}
+            <span className="text-teal-600 font-normal">360° Performance Intelligence</span>, Built For Teams That Care
           </h2>
           <p className="text-base sm:text-xl text-slate-600 font-light leading-relaxed">
             Yetah IQ transforms scattered feedback into clear, actionable signals. Collect 360° reviews across peer, upward, downward, and self-evaluations without the administrative friction.
@@ -58,13 +59,13 @@ const PlatformOverview = () => {
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{  margin: '-50px' }}
+              viewport={{ margin: '-50px' }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
               className="group flex flex-col justify-between space-y-4"
             >
               <div className="space-y-4">
                 {/* Card Image */}
-                <div className="overflow-hidden bg-slate-100 aspect-16/10 border border-slate-200 shadow-sm">
+                <div className="overflow-hidden bg-slate-100 aspect-16/10 border border-slate-200 shadow-sm transition-colors group-hover:border-teal-500/40">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -73,8 +74,8 @@ const PlatformOverview = () => {
                   />
                 </div>
 
-                {/* Card Title (Uppercase Corporate Style) */}
-                <h3 className="text-sm font-bold tracking-wider text-slate-900 uppercase font-sans">
+                {/* Card Title */}
+                <h3 className="text-sm font-bold tracking-wider text-slate-900 uppercase font-sans group-hover:text-teal-600 transition-colors">
                   {item.title}
                 </h3>
 
@@ -84,7 +85,6 @@ const PlatformOverview = () => {
                 </p>
               </div>
 
-              
             </motion.div>
           ))}
         </div>
@@ -94,5 +94,4 @@ const PlatformOverview = () => {
   );
 };
 
-
-export default PlatformOverview
+export default PlatformOverview;

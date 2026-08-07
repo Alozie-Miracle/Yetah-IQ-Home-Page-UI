@@ -4,7 +4,6 @@ import { Check, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 
-
 const PricingSection = () => {
   const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
 
@@ -24,7 +23,7 @@ const PricingSection = () => {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
         >
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-mono font-light tracking-widest uppercase px-3 py-1 rounded border inline-block bg-red-50 border-red-200 text-red-700">
+            <span className="text-xs font-mono font-light tracking-widest uppercase px-3 py-1 rounded border inline-block bg-teal-50 border-teal-200 text-teal-700">
               PRICING
             </span>
             <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-slate-900">
@@ -39,7 +38,7 @@ const PricingSection = () => {
                 onClick={() => setBillingCycle('monthly')}
                 className={`px-3.5 py-1.5 text-xs cursor-pointer font-mono rounded transition-all ${
                   billingCycle === 'monthly'
-                    ? 'bg-red-600 text-white font-medium shadow'
+                    ? 'bg-teal-600 text-white font-medium shadow'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -49,7 +48,7 @@ const PricingSection = () => {
                 onClick={() => setBillingCycle('yearly')}
                 className={`px-3.5 py-1.5 cursor-pointer text-xs font-mono rounded transition-all flex items-center gap-1.5 ${
                   billingCycle === 'yearly'
-                    ? 'bg-red-600 text-white font-medium shadow'
+                    ? 'bg-teal-600 text-white font-medium shadow'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -94,7 +93,7 @@ const PricingSection = () => {
               <div className="space-y-3.5 mb-8">
                 {['Up to 30 people', '1 active cycle', 'Anonymous feedback'].map((feat, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                    <Check className="w-4 h-4 text-teal-600 mt-0.5 shrink-0" />
                     <span className="text-sm font-light text-slate-700">
                       {feat}
                     </span>
@@ -118,10 +117,10 @@ const PricingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-            className="rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative bg-white border-2 border-red-500 shadow-xl"
+            className="rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative bg-white border-2 border-teal-600 shadow-xl"
           >
             <div className="absolute -top-3.5 left-8">
-              <span className="px-3 py-1 rounded-full text-[10px] font-mono font-light uppercase tracking-widest bg-red-600 text-white shadow-md">
+              <span className="px-3 py-1 rounded-full text-[10px] font-mono font-light uppercase tracking-widest bg-teal-600 text-white shadow-md">
                 Most teams pick this
               </span>
             </div>
@@ -150,7 +149,7 @@ const PricingSection = () => {
               <div className="space-y-3.5 mb-8">
                 {['Unlimited people', 'Unlimited cycles', 'Summaries & signals'].map((feat, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                    <Check className="w-4 h-4 text-teal-600 mt-0.5 shrink-0" />
                     <span className="text-sm font-light text-slate-700">
                       {feat}
                     </span>
@@ -161,7 +160,7 @@ const PricingSection = () => {
 
             <Link
               href='/login'
-              className="w-full py-3.5 cursor-pointer text-sm font-light transition-all flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md"
+              className="w-full py-3.5 cursor-pointer text-sm font-light transition-all flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg shadow-md"
             >
               <span>Start free trial</span>
               <ArrowRight className="w-4 h-4" />
@@ -197,7 +196,7 @@ const PricingSection = () => {
               <div className="space-y-3.5 mb-8">
                 {['Everything in Grow', 'SSO / SAML', 'Dedicated CSM'].map((feat, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                    <Check className="w-4 h-4 text-teal-600 mt-0.5 shrink-0" />
                     <span className="text-sm font-light text-slate-700">
                       {feat}
                     </span>
@@ -222,5 +221,4 @@ const PricingSection = () => {
   );
 };
 
-
-export default PricingSection
+export default PricingSection;

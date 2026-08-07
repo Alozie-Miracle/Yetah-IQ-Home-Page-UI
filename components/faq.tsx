@@ -80,9 +80,6 @@ const FaqSection = () => {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div className="space-y-3">
-            {/* <span className="text-xs font-mono font-light tracking-widest uppercase px-3 py-1 rounded border inline-block bg-red-50 border-red-200 text-red-700">
-              FREQUENTLY ASKED QUESTIONS
-            </span> */}
             <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-slate-900">
               Frequently Asked Questions
             </h2>
@@ -96,7 +93,7 @@ const FaqSection = () => {
               placeholder="Search questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl text-xs font-mono bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-red-600 placeholder:text-slate-400 transition-all"
+              className="w-full pl-10 pr-4 py-2 rounded-xl text-xs font-mono bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-teal-600 placeholder:text-slate-400 transition-all"
             />
           </div>
         </motion.div>
@@ -122,7 +119,7 @@ const FaqSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
                   className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                     isOpen
-                      ? 'bg-white border-red-500 shadow-sm'
+                      ? 'bg-white border-teal-600 shadow-sm'
                       : 'bg-slate-50 border-slate-200 hover:border-slate-400'
                   }`}
                 >
@@ -131,14 +128,14 @@ const FaqSection = () => {
                     className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
                   >
                     <div className="flex items-center gap-4">
-                      <span className="text-xs font-mono text-red-600 font-semibold shrink-0">
+                      <span className="text-xs font-mono text-teal-700 font-semibold shrink-0">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <h3 className="text-base sm:text-lg font-light text-slate-900">
                         {item.question}
                       </h3>
                     </div>
-                    <div className={`p-1.5 rounded-full transition-transform duration-300 ${isOpen ? 'rotate-180 bg-red-600 text-white' : 'bg-slate-200 text-slate-600'}`}>
+                    <div className={`p-1.5 rounded-full transition-transform duration-300 ${isOpen ? 'rotate-180 bg-teal-600 text-white' : 'bg-slate-200 text-slate-600'}`}>
                       <ChevronDown className="w-4 h-4" />
                     </div>
                   </button>
@@ -171,7 +168,7 @@ const FaqSection = () => {
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
           className="p-8 rounded-2xl border bg-slate-50 border-slate-200 text-center space-y-4"
         >
-          <div className="inline-flex p-3 rounded-full bg-red-50 text-red-600 border border-red-200">
+          <div className="inline-flex p-3 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
             <Mail className="w-6 h-6" />
           </div>
           <h3 className="text-xl font-light text-slate-900">
@@ -183,9 +180,9 @@ const FaqSection = () => {
           <div className="pt-2">
             <a
               href="mailto:admin@yetahiq.com"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-mono font-medium text-red-600 bg-white border border-red-200 hover:border-red-500 rounded-lg shadow-sm hover:shadow transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-mono font-medium text-teal-700 bg-white border border-teal-200 hover:border-teal-500 rounded-lg shadow-sm hover:shadow transition-all"
             >
-              <Mail className="w-4 h-4 text-red-600" />
+              <Mail className="w-4 h-4 text-teal-700" />
               <span>admin@yetahiq.com</span>
             </a>
           </div>
@@ -196,5 +193,4 @@ const FaqSection = () => {
   );
 };
 
-
-export default FaqSection
+export default FaqSection;
