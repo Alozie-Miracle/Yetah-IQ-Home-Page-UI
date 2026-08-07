@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { HERO_SLIDES } from '@/lib/data';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'motion/react';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -22,7 +23,7 @@ const HeroCarousel = () => {
   return (
     <section 
       id="hero"
-      className="relative min-h-[88vh] pt-28 pb-6 flex flex-col justify-between overflow-hidden bg-[#070E17]"
+      className="relative h-[90vh] pt-28 pb-6 flex flex-col justify-between overflow-hidden bg-[#070E17]"
     >
       {/* Background Image Carousel Container with Crossfade */}
       {HERO_SLIDES.map((item, idx) => (
@@ -46,34 +47,63 @@ const HeroCarousel = () => {
 
       {/* Main Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 my-auto py-12">
-        <div className="max-w-3xl space-y-6">
-          
-          {/* Subtle Category Eyebrow - Cyan Accent */}
-          <div className="text-xs font-mono font-medium tracking-widest text-cyan-400 uppercase">
-            ENTERPRISE BEHAVIORAL INTELLIGENCE
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.12] drop-shadow-sm">
-            {slide.headline}
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-lg sm:text-2xl text-slate-200 font-light leading-relaxed drop-shadow max-w-2xl">
-            {slide.subheadline}
-          </p>
-
-          {/* Turquoise Call to Action Button */}
-          <div className="pt-4">
-            <button
-              className="px-7 py-4 cursor-pointer text-sm font-medium tracking-wider text-white bg-teal-600 hover:bg-teal-500 transition-colors flex items-center justify-center gap-3 group shadow-lg shadow-teal-900/20"
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={slide.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="max-w-4xl space-y-6"
+          >
+            
+            {/* Subtle Category Eyebrow - Cyan Accent */}
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-xs font-mono font-medium tracking-widest text-cyan-400 uppercase"
             >
-              <span>{slide.ctaText}</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
+              ENTERPRISE BEHAVIORAL INTELLIGENCE
+            </motion.div>
 
-        </div>
+            {/* Headline */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight leading-[1.12] drop-shadow-sm"
+            >
+              {slide.headline}
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-lg text-slate-200 font-light leading-relaxed drop-shadow max-w-2xl"
+            >
+              {slide.subheadline}
+            </motion.p>
+
+            {/* Turquoise Call to Action Button */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="pt-4"
+            >
+              <button
+                className="px-7 py-4 cursor-pointer text-sm font-medium tracking-wider text-white bg-teal-600 hover:bg-teal-500 transition-colors flex items-center justify-center gap-3 group shadow-lg shadow-teal-900/20"
+              >
+                <span>{slide.ctaText}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Bottom Tab Bar */}
@@ -91,7 +121,11 @@ const HeroCarousel = () => {
                   {/* Top Line Indicator - Turquoise active indicator */}
                   <div className="w-full bg-white/20 h-0.5 relative overflow-hidden mb-3">
                     {isActive && (
-                      <div className="absolute inset-0 bg-teal-500 h-0.5 transition-all duration-300"></div>
+                      <motion.div 
+                        layoutId="activeTabIndicator"
+                        className="absolute inset-0 bg-teal-500 h-0.5"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
                     )}
                   </div>
                   {/* Title Text */}
