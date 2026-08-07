@@ -10,10 +10,6 @@ const Footer = () => {
           {/* Column 1: Logo & Description */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded bg-[#112236] border border-[#1E3A5F] flex items-center justify-center font-bold text-white text-sm">
-                <span className="text-cyan-400">Y</span>
-                <span className="text-teal-400 text-xs font-black ml-0.5">✦</span>
-              </div>
               <span className="font-extrabold text-lg text-white tracking-wider font-sans">
                 Yetah IQ
               </span>

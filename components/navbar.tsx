@@ -46,13 +46,6 @@ const Navbar = () => {
             className="flex items-center gap-2.5 group text-left focus:outline-none"
             aria-label="Yetah IQ Homepage"
           >
-            <div className="w-9 h-9 rounded bg-[#0A1626] border border-teal-800/50 flex items-center justify-center relative overflow-hidden group-hover:border-teal-400 transition-colors shadow-md">
-              {/* Turquoise to Cyan Gradient Accent */}
-              <div className="absolute inset-0 bg-linear-to-br from-teal-500/20 via-transparent to-cyan-500/20"></div>
-              <span className="relative z-10 font-light text-lg tracking-tighter text-white">
-                Y<span className="text-cyan-400 font-mono text-xs ml-0.5">✦</span>
-              </span>
-            </div>
             <div className="flex items-baseline gap-1.5">
               <span className="font-light text-xl tracking-tight text-white font-sans">
                 Yetah IQ
