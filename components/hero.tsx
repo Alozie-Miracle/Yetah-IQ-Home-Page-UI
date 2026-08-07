@@ -107,7 +107,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Bottom Tab Bar */}
-      {/* <div className="relative z-20 w-full border-t border-white/10 bg-linear-to-t from-[#070E17] to-transparent pt-4 pb-4">
+      <div className="sm:hidden relative z-20 w-full border-t border-white/10 bg-linear-to-t from-[#070E17] to-transparent pt-4 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {HERO_SLIDES.map((s, idx) => {
@@ -138,7 +138,7 @@ const HeroCarousel = () => {
             })}
           </div>
         </div>
-      </div> */}
+      </div>
 
     </section>
   );
