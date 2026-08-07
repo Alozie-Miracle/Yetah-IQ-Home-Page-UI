@@ -107,7 +107,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Bottom Tab Bar */}
-      <div className="relative z-20 w-full border-t border-white/10 bg-linear-to-t from-[#070E17] to-transparent pt-4 pb-4">
+      {/* <div className="relative z-20 w-full border-t border-white/10 bg-linear-to-t from-[#070E17] to-transparent pt-4 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {HERO_SLIDES.map((s, idx) => {
@@ -118,7 +118,7 @@ const HeroCarousel = () => {
                   onClick={() => setCurrentSlide(idx)}
                   className="text-left group cursor-pointer focus:outline-none py-2"
                 >
-                  {/* Top Line Indicator - Turquoise active indicator */}
+
                   <div className="w-full bg-white/20 h-0.5 relative overflow-hidden mb-3">
                     {isActive && (
                       <motion.div 
@@ -128,7 +128,6 @@ const HeroCarousel = () => {
                       />
                     )}
                   </div>
-                  {/* Title Text */}
                   <p className={`text-xs sm:text-sm font-light transition-colors line-clamp-2 ${
                     isActive ? 'text-white font-normal' : 'text-slate-400 group-hover:text-cyan-300'
                   }`}>
@@ -139,7 +138,7 @@ const HeroCarousel = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
 
     </section>
   );
