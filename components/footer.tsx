@@ -15,7 +15,7 @@ const Footer = () => {
                 <span className="text-red-500 text-xs font-black ml-0.5">✦</span>
               </div>
               <span className="font-extrabold text-lg text-white tracking-wider font-sans">
-                Yetah <span className="text-cyan-400">IQ</span>
+                Yetah IQ
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">

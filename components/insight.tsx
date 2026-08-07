@@ -8,6 +8,10 @@ import anonymityImg from '@/assets/anonymity_privacy_preview.jpg';
 import Image from 'next/image';
 
 
+import hand from '@/assets/hand.jpeg'
+import hand2 from '@/assets/hand2.jpeg'
+import tracking from '@/assets/hero3.jpg'
+
 
 const InsightSection = () => {
   const items = [
@@ -15,14 +19,14 @@ const InsightSection = () => {
       id: 'signals',
       title: 'Decision Signals',
       description: 'Instantly identify who is Promotion Ready, who Needs Support, or who requires a Risk Watch.',
-      image: decisionSignalsImg,
+      image: hand,
       reverse: false
     },
     {
       id: 'plans',
-      title: 'AI-Generated Action Plans',
+      title: 'Generated Action Plans',
       description: 'Get clear, tailored recommendations on strengths, growth areas, and specific next steps for every 1:1.',
-      image: actionPlansImg,
+      image: hand2,
       reverse: true
     },
     {
@@ -32,13 +36,13 @@ const InsightSection = () => {
       image: trajectoryImg,
       reverse: false
     },
-    {
-      id: 'anonymity',
-      title: 'Anonymity Thresholds',
-      description: 'Keep feedback completely confidential until safety thresholds are met to protect honest communication.',
-      image: anonymityImg,
-      reverse: true
-    }
+    // {
+    //   id: 'anonymity',
+    //   title: 'Anonymity Thresholds',
+    //   description: 'Keep feedback completely confidential until safety thresholds are met to protect honest communication.',
+    //   image: anonymityImg,
+    //   reverse: true
+    // }
   ];
 
   return (
@@ -54,7 +58,7 @@ const InsightSection = () => {
           className="max-w-4xl space-y-4"
         >
           <h2 className="text-3xl sm:text-5xl font-light tracking-tight leading-tight text-slate-900">
-            From Raw Feedback to <span className="text-red-600 font-normal">Instant Decision Signals</span>
+            From Raw Feedback To <span className="text-red-600 font-normal">Instant Decision Signals</span>
           </h2>
           <p className="text-base sm:text-xl text-slate-600 font-light leading-relaxed">
             Don’t let valuable feedback gather dust in spreadsheets. Yetah IQ turns quantitative scores and qualitative comments into clear employee growth roadmaps.

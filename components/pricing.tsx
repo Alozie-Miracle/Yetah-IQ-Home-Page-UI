@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 
 const PricingSection = () => {
@@ -102,12 +103,13 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <button
+            <Link
+              href='/login'
               className="w-full cursor-pointer py-3.5 text-sm font-light transition-all flex items-center justify-center gap-2 bg-[#070E17] hover:bg-slate-800 text-white rounded-lg shadow-sm"
             >
               <span>Get started free</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
 
           {/* Card 2: Grow (Most teams pick this) */}
@@ -157,12 +159,13 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <button
+            <Link
+              href='/login'
               className="w-full py-3.5 cursor-pointer text-sm font-light transition-all flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md"
             >
               <span>Start free trial</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
 
           {/* Card 3: Enterprise */}
@@ -203,12 +206,13 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <button
+            <Link
+              href="mailto:admin@yetahiq.com"
               className="w-full py-3.5 cursor-pointer text-sm font-light transition-all flex items-center justify-center gap-2 bg-[#070E17] hover:bg-slate-800 text-white rounded-lg shadow-sm"
             >
               <span>Contact us</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
 
         </div>

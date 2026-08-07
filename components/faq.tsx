@@ -80,9 +80,9 @@ const FaqSection = () => {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div className="space-y-3">
-            <span className="text-xs font-mono font-light tracking-widest uppercase px-3 py-1 rounded border inline-block bg-red-50 border-red-200 text-red-700">
+            {/* <span className="text-xs font-mono font-light tracking-widest uppercase px-3 py-1 rounded border inline-block bg-red-50 border-red-200 text-red-700">
               FREQUENTLY ASKED QUESTIONS
-            </span>
+            </span> */}
             <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-slate-900">
               Frequently Asked Questions
             </h2>

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, LogIn, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -55,7 +55,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-baseline gap-1.5">
               <span className="font-light text-xl tracking-tight text-white font-sans">
-                Yetah <span className="text-cyan-400 font-mono">IQ</span>
+                Yetah IQ
               </span>
             </div>
           </Link>
@@ -81,19 +81,21 @@ const Navbar = () => {
 
           {/* Action CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <button
+            <Link
+              href='/login'
               className="px-4 py-2 text-xs font-mono font-light text-slate-300 hover:text-white border border-[#1E3A5F] hover:border-slate-400 rounded bg-[#0F2238]/60 backdrop-blur-sm transition-all flex items-center gap-1.5"
             >
               <LogIn className="w-3.5 h-3.5 text-cyan-400" />
               <span>Login</span>
-            </button>
+            </Link>
 
-            <button
+            <Link
+              href='/signup'
               className="px-5 py-2 text-xs font-light tracking-wider text-white bg-red-600 hover:bg-red-700 rounded transition-all flex items-center gap-1.5 shadow-md"
             >
               <span>Register</span>
               <ChevronRight className="w-3.5 h-3.5" />
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -115,31 +117,33 @@ const Navbar = () => {
         <div className="md:hidden bg-[#070E17]/95 backdrop-blur-xl border-b border-[#1E3A5F] px-4 pt-4 pb-6 mt-3 space-y-3">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.id}
-                onClick={() => handleNavClick(link.id)}
+                href={`#${link.id}`}
                 className="text-left py-2.5 px-3 rounded text-sm text-slate-200 hover:bg-[#0F2238] hover:text-cyan-400 font-medium capitalize"
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
           <div className="pt-4 border-t border-[#1E3A5F] flex flex-col gap-2.5">
-            <button
+            <Link
+              href='/login'
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-2.5 text-center text-xs font-mono font-semibold text-slate-300 bg-[#0F2238] border border-[#1E3A5F] rounded flex items-center justify-center gap-2"
             >
               <LogIn className="w-3.5 h-3.5 text-cyan-400" />
               Login to Account
-            </button>
-            <button
+            </Link>
+            <Link
+              href='/signup'
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 text-center text-xs font-light tracking-wider text-white bg-red-600 hover:bg-red-700 rounded shadow-lg flex items-center justify-center gap-2"
             >
               Register
               <ArrowUpRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
       )}

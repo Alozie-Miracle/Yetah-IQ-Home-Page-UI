@@ -7,6 +7,7 @@ import synthesisImg from '@/assets/synthesis_card.jpg';
 import setupImg from '@/assets/setup_card.jpg';
 import Image from 'next/image';
 
+import photo from '@/assets/photo3.jpg'
 
 const PlatformOverview = () => {
   const highlights = [
@@ -14,22 +15,19 @@ const PlatformOverview = () => {
       id: 'reviews',
       title: '360° Multi-Directional Reviews',
       description: 'Evaluate performance from every angle, peer, direct report, manager, and self.',
-      image: reviewsImg,
-      linkText: 'Learn more about 360° reviews'
+      image: reviewsImg
     },
     {
       id: 'synthesis',
       title: 'Automated Feedback Synthesis',
       description: 'Stop spending days reading hundreds of survey comments. Let intelligence group key themes instantly.',
-      image: synthesisImg,
-      linkText: 'Learn more about automated synthesis'
+      image: photo
     },
     {
       id: 'setup',
       title: 'Turnkey Setup',
       description: 'Launch a fully configured review cycle in under 10 minutes.',
-      image: setupImg,
-      linkText: 'Learn more about turnkey setup'
+      image: setupImg
     }
   ];
 
@@ -46,7 +44,7 @@ const PlatformOverview = () => {
           className="max-w-4xl space-y-4"
         >
           <h2 className="text-3xl sm:text-5xl font-light tracking-tight leading-tight">
-            <span className="text-red-600 font-normal">360° Performance Intelligence</span>, Built for Teams That Care
+            <span className="text-red-600 font-normal">360° Performance Intelligence</span>, Built For Teams That Care
           </h2>
           <p className="text-base sm:text-xl text-slate-600 font-light leading-relaxed">
             Yetah IQ transforms scattered feedback into clear, actionable signals. Collect 360° reviews across peer, upward, downward, and self-evaluations without the administrative friction.
@@ -86,15 +84,7 @@ const PlatformOverview = () => {
                 </p>
               </div>
 
-              {/* Link / CTA */}
-              <div className="pt-2">
-                <button
-                  className="inline-flex cursor-pointer items-center gap-2 text-sm text-slate-900 font-normal hover:text-red-600 transition-colors group-hover:underline"
-                >
-                  <span>{item.linkText}</span>
-                  <ArrowRight className="w-4 h-4 text-red-600 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+              
             </motion.div>
           ))}
         </div>
