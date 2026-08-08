@@ -31,7 +31,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     secondaryCtaText: "View Node Graph",
     ctaAction: "engine",
     badge: "NEURAL PLEXUS TELEMETRY",
-    image: hero4,
+    image: heroNeuralImg,
     accentColor: "#00E5FF"
   },
   {
@@ -43,7 +43,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     secondaryCtaText: "View Capabilities",
     ctaAction: "demo",
     badge: "EXECUTIVE COMMAND SUITE",
-    image: hero3,
+    image: hero4,
     accentColor: "#E11D48"
   }
 ];
