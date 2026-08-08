@@ -7,6 +7,7 @@ import heroAnalyticsImg from '@/assets/hero_analytics_city.jpg';
 import hero1 from '@/assets/hero1.jpeg';
 import hero2 from '@/assets/hero2.jpg';
 import hero3 from '@/assets/hero3.jpg';
+import hero4 from '@/assets/hero4.jpeg';
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
@@ -30,7 +31,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     secondaryCtaText: "View Node Graph",
     ctaAction: "engine",
     badge: "NEURAL PLEXUS TELEMETRY",
-    image: heroNeuralImg,
+    image: hero4,
     accentColor: "#00E5FF"
   },
   {
