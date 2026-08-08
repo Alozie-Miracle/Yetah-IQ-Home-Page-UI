@@ -17,6 +17,11 @@ const Footer = () => {
             <p className="text-xs text-slate-400 leading-relaxed">
               Enterprise behavioral intelligence platform built for modern corporate organizations.
             </p>
+
+            <div>
+              <p>Location</p>
+              <p>MBM Plaza No. 46/48 Old Aba Road, Rumuobiakani , Port Harcourt, Rivers State</p>
+            </div>
           </div>
 
           {/* Column 2: Navigation Links */}

@@ -33,8 +33,8 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#070E17]/90 backdrop-blur-md border-b border-teal-900/40 shadow-2xl py-3.5'
-          : 'bg-linear-to-b from-[#070E17]/90 to-transparent border-b border-white/10 py-5'
+          ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm py-3.5'
+          : 'bg-white border-b border-slate-100 py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ const Navbar = () => {
             aria-label="Yetah IQ Homepage"
           >
             <div className="flex items-baseline gap-1.5">
-              <span className="font-light text-xl tracking-tight text-white font-sans">
+              <span className="font-medium text-xl tracking-tight text-slate-900 font-sans">
                 Yetah IQ
               </span>
             </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                 href={`#${link.id}`}
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className="text-sm font-light transition-colors hover:text-cyan-400 text-slate-300 capitalize"
+                className="text-sm font-medium transition-colors hover:text-teal-600 text-slate-600 capitalize"
               >
                 {link.label}
               </Link>
@@ -71,18 +71,18 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href='/login'
-              className="px-4 py-2 text-xs font-mono font-light text-slate-300 hover:text-white border border-teal-900/50 hover:border-cyan-400/50 rounded bg-[#0F2238]/60 backdrop-blur-sm transition-all flex items-center gap-1.5"
+              className="px-4 py-2 text-xs font-mono font-medium text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 rounded bg-slate-50 transition-all flex items-center gap-1.5"
             >
-              <LogIn className="w-3.5 h-3.5 text-cyan-400" />
+              <LogIn className="w-3.5 h-3.5 text-teal-600" />
               <span>Login</span>
             </Link>
 
-            {/* Turquoise Primary CTA */}
+            {/* Teal Primary CTA */}
             <Link
-              href='/signup'
-              className="px-5 py-2 text-xs font-light tracking-wider text-white bg-teal-600 hover:bg-teal-500 rounded transition-all flex items-center gap-1.5 shadow-md shadow-teal-950/40"
+              href='/'
+              className="px-5 py-2 text-xs font-light tracking-wider text-white bg-teal-600 hover:bg-teal-500 rounded transition-all flex items-center gap-1.5 shadow-sm"
             >
-              <span>Register</span>
+              <span>Request a Demo</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -91,10 +91,10 @@ const Navbar = () => {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-white rounded bg-[#0A1626] border border-teal-900/50"
+              className="p-2 text-slate-600 hover:text-slate-900 rounded bg-slate-100 border border-slate-200"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-cyan-400" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-teal-600" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
@@ -103,32 +103,32 @@ const Navbar = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#070E17]/95 backdrop-blur-xl border-b border-teal-900/40 px-4 pt-4 pb-6 mt-3 space-y-3">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-4 pt-4 pb-6 mt-3 space-y-3">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
                 href={`#${link.id}`}
-                className="text-left py-2.5 px-3 rounded text-sm text-slate-200 hover:bg-[#0F2238] hover:text-cyan-400 font-medium capitalize transition-colors"
+                className="text-left py-2.5 px-3 rounded text-sm text-slate-700 hover:bg-slate-50 hover:text-teal-600 font-medium capitalize transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className="pt-4 border-t border-teal-900/40 flex flex-col gap-2.5">
+          <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5">
             <Link
               href='/login'
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 text-center text-xs font-mono font-semibold text-slate-300 bg-[#0F2238] border border-teal-900/50 rounded flex items-center justify-center gap-2"
+              className="w-full py-2.5 text-center text-xs font-mono font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded flex items-center justify-center gap-2"
             >
-              <LogIn className="w-3.5 h-3.5 text-cyan-400" />
+              <LogIn className="w-3.5 h-3.5 text-teal-600" />
               Login to Account
             </Link>
             <Link
               href='/signup'
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 text-center text-xs font-light tracking-wider text-white bg-teal-600 hover:bg-teal-500 rounded shadow-lg flex items-center justify-center gap-2"
+              className="w-full py-3 text-center text-xs font-light tracking-wider text-white bg-teal-600 hover:bg-teal-500 rounded shadow flex items-center justify-center gap-2"
             >
               Register
               <ArrowUpRight className="w-4 h-4" />
